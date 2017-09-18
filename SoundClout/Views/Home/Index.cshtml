@@ -4,10 +4,10 @@
 }
 
 <div class="container">
-    <form>
+    <form asp-action="MakeDestiny">
         <input type="text" placeholder="First Name" id="firstName" asp-for="@Model.FirstName" />
         <input type="text" placeholder="Last Name" id="lastName" asp-for="@Model.LastName" />
         <input type="date" placeholder="Date of Birth" asp-for="@Model.DOB" />
-        <button type="button" asp-action="MakeDestiny">Submit</button> 
+        <button type="submit" asp-action="MakeDestiny">Submit</button> 
     </form>
 </div>

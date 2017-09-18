@@ -39,23 +39,25 @@ namespace SoundClout.Controllers
 
             while(date > 9 && date != 11 && date != 22 && date != 33)
             {
-                var splitDate = date.ToString().Split();
+                finalNum = 0;
+
+                var splitDate = date.ToString().ToCharArray();
 
                 for( int i = 0; i < splitDate.Length; i++)
                 {
-                    finalNum += Int32.Parse(splitDate[i]);
+                    finalNum += Int32.Parse(splitDate[i].ToString());
                     date = finalNum;
                 }
             }
 
-            return finalNum;
+            return date;
 
         }
 
         public int MakeDestiny()
         {
             DateTime birthDate = DateTime.Now;
-            int day = Reduce(birthDate.Day) + 1;
+            int day = Reduce(birthDate.Day);
             int month = Reduce(birthDate.Month);
             int year = Reduce(birthDate.Year);
 
