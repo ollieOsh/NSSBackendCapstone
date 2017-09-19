@@ -4,10 +4,17 @@
 }
 
 <div class="container">
-    <form asp-action="MakeDestiny(@Model)">
-        <input type="text" placeholder="First Name" id="firstName" asp-for="@Model.FirstName" />
-        <input type="text" placeholder="Last Name" id="lastName" asp-for="@Model.LastName" />
-        <input type="date" placeholder="Date of Birth" asp-for="@Model.DOB" />
-        <button type="submit" asp-action="MakeDestiny">Submit</button> 
-    </form>
+    <div>
+        <form>
+            <input type="text" placeholder="First Name" id="firstName" asp-for="@Model.FirstName" />
+            <input type="text" placeholder="Last Name" id="lastName" asp-for="@Model.LastName" />
+            <input type="date" placeholder="Date of Birth" asp-for="@Model.DOB" />
+            <button type="submit" asp-action="MakeDestiny">Submit</button>
+        </form>
+    </div>
+    
+    <div>
+        <h2>@Html.DisplayFor(model => model.Numerology)</h2>
+        <h3>@Html.DisplayFor(model => model.FirstName)</h3>
+    </div>
 </div>

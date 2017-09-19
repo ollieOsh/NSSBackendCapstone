@@ -17,5 +17,7 @@ namespace SoundClout.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
+
+        public int Numerology { get; set; }
     }
 }
