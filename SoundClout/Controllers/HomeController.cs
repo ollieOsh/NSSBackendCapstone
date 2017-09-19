@@ -11,7 +11,8 @@ namespace SoundClout.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var model = new Form();
+            return View(model);
         }
 
         public IActionResult About()
@@ -54,9 +55,9 @@ namespace SoundClout.Controllers
 
         }
 
-        public int MakeDestiny()
+        public int MakeDestiny(Form form)
         {
-            DateTime birthDate = DateTime.Now;
+            DateTime birthDate = form.DOB;
             int day = Reduce(birthDate.Day);
             int month = Reduce(birthDate.Month);
             int year = Reduce(birthDate.Year);
