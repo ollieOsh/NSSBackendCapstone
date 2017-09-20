@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SoundClout.Models
+namespace SoundClout.ViewModels
 {
     public class Form
     {
@@ -15,9 +15,14 @@ namespace SoundClout.Models
         public string LastName { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
         public int Numerology { get; set; }
+
+        public DayOfWeek Day { get; set; }
+
+        public int Prefix { get;set; }
+
+        public string InitialVal { get; set; }
     }
 }

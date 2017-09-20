@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SoundClout.Models;
+using Microsoft.EntityFrameworkCore;
+using SoundClout.ViewModels;
 
 namespace SoundClout.Controllers
 {
@@ -11,7 +12,6 @@ namespace SoundClout.Controllers
     {
         public IActionResult Index(Form model)
         {
-            //var model = new Form();
             return View(model);
         }
 
@@ -58,11 +58,14 @@ namespace SoundClout.Controllers
         public IActionResult MakeDestiny(Form form)
         {
             DateTime birthDate = form.DOB;
+
             int day = Reduce(birthDate.Day);
             int month = Reduce(birthDate.Month);
             int year = Reduce(birthDate.Year);
 
             form.Numerology =  Reduce(day + month + year);
+            form.Day = form.DOB.DayOfWeek;
+            form.InitialVal = form.FirstName.First().GetHashCode().ToString();
 
             return RedirectToAction("Index", form);
         }

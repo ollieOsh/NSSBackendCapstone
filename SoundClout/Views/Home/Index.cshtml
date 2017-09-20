@@ -1,4 +1,4 @@
-﻿@model SoundClout.Models.Form
+﻿@model SoundClout.ViewModels.Form
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -8,13 +8,22 @@
         <form>
             <input type="text" placeholder="First Name" id="firstName" asp-for="@Model.FirstName" />
             <input type="text" placeholder="Last Name" id="lastName" asp-for="@Model.LastName" />
-            <input type="date" placeholder="Date of Birth" asp-for="@Model.DOB" />
+            <input type="datetime" asp-for="@Model.DOB"/>
+            <div>
+                <input type="radio" name="prefix" id="lil" value="1" asp-for="@Model.Prefix" checked/>
+                <label for="lil">Lil</label>
+
+                <input type="radio" name="prefix" id="yung" value="2" asp-for="@Model.Prefix"/>
+                <label for="yung">Yung</label>
+            </div>
             <button type="submit" asp-action="MakeDestiny">Submit</button>
         </form>
     </div>
     
     <div>
         <h2>@Html.DisplayFor(model => model.Numerology)</h2>
-        <h3>@Html.DisplayFor(model => model.FirstName)</h3>
+        <h3>@Html.DisplayFor(model => model.Day)</h3>
+        <h3>@Html.DisplayFor(model => model.Prefix)</h3>
+        <h3>@Html.DisplayFor(model => model.InitialVal)</h3>
     </div>
 </div>
