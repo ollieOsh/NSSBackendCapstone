@@ -19,10 +19,10 @@ namespace SoundClout.ViewModels
 
         public int Numerology { get; set; }
 
-        public DayOfWeek Day { get; set; }
+        public string Day { get; set; }
 
-        public int Prefix { get;set; }
+        public string Prefix { get;set; }
 
-        public string InitialVal { get; set; }
+        public string Clout { get; set; }
     }
 }

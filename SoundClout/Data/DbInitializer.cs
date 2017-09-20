@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoundClout.Data //Worked on by Ollie, August 18th, 2017
 {
-    public static class DBInitializer
+    public static class DbInitializer
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
@@ -19,18 +19,32 @@ namespace SoundClout.Data //Worked on by Ollie, August 18th, 2017
                     return; //db is already seeded
                 }
 
-                var name = new MainName[]
+                var Name = new MainName[]
                 {
                     new MainName()
                     {
                         Word = "Hitta",
                         SyllableCount = 2,
-                        NumerologyInt = 1,
+                        NumerologyInt = 8,
                         OrderInt = 3,
-                        PrefixInt = 3,
-                        Weekday = "Thursday"
+                        PrefixInt = 1,
+                        Weekday = "Saturday"
+                    },
+                    new MainName()
+                    {
+                        Word = "Swag",
+                        SyllableCount = 1,
+                        NumerologyInt = 8,
+                        OrderInt = 1,
+                        PrefixInt = 1,
+                        Weekday = "Saturday"
                     },
                 };
+                foreach (MainName n in Name)
+                {
+                    context.MainName.Add(n);
+                }
+                context.SaveChanges();
             }
         }
     }

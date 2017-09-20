@@ -10,10 +10,10 @@
             <input type="text" placeholder="Last Name" id="lastName" asp-for="@Model.LastName" />
             <input type="datetime" asp-for="@Model.DOB"/>
             <div>
-                <input type="radio" name="prefix" id="lil" value="1" asp-for="@Model.Prefix" checked/>
+                <input type="radio" name="prefix" id="lil" value="Lil" asp-for="@Model.Prefix" checked/>
                 <label for="lil">Lil</label>
 
-                <input type="radio" name="prefix" id="yung" value="2" asp-for="@Model.Prefix"/>
+                <input type="radio" name="prefix" id="yung" value="Yung" asp-for="@Model.Prefix"/>
                 <label for="yung">Yung</label>
             </div>
             <button type="submit" asp-action="MakeDestiny">Submit</button>
@@ -23,7 +23,9 @@
     <div>
         <h2>@Html.DisplayFor(model => model.Numerology)</h2>
         <h3>@Html.DisplayFor(model => model.Day)</h3>
-        <h3>@Html.DisplayFor(model => model.Prefix)</h3>
-        <h3>@Html.DisplayFor(model => model.InitialVal)</h3>
+        @if (Model.Clout != "")
+        {
+            <h3>@Html.DisplayFor(model => model.Prefix) @Html.DisplayFor(model => model.Clout)</h3>
+        }
     </div>
 </div>

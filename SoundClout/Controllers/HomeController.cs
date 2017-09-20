@@ -5,11 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SoundClout.ViewModels;
+using SoundClout.Data;
 
 namespace SoundClout.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index(Form model)
         {
             return View(model);
@@ -55,7 +63,7 @@ namespace SoundClout.Controllers
 
         }
 
-        public IActionResult MakeDestiny(Form form)
+        public async Task<IActionResult> MakeDestiny(Form form)
         {
             DateTime birthDate = form.DOB;
 
@@ -64,8 +72,21 @@ namespace SoundClout.Controllers
             int year = Reduce(birthDate.Year);
 
             form.Numerology =  Reduce(day + month + year);
-            form.Day = form.DOB.DayOfWeek;
-            form.InitialVal = form.FirstName.First().GetHashCode().ToString();
+            form.Day = form.DOB.DayOfWeek.ToString();
+
+            if (form.Prefix == "Lil")
+            {
+                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == form.Numerology && n.OrderInt > 1 && n.Weekday == form.Day);
+
+                form.Clout = second.Word;
+
+                if(second.SyllableCount < 3)
+                {
+                    var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == form.Numerology && n.OrderInt != 2 && n.Weekday == form.Day && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id);
+                    
+                    form.Clout = first.Word + " " + second.Word;
+                }
+            }
 
             return RedirectToAction("Index", form);
         }
