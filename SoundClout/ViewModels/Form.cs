@@ -8,13 +8,13 @@ namespace SoundClout.ViewModels
 {
     public class Form
     {
-        [Required]
+        [Required(ErrorMessage = "Please Enter a First Name")]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter a First Name")]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter a Valid Date of Birth")]
         public DateTime DOB { get; set; }
 
         public string Prefix { get;set; }
