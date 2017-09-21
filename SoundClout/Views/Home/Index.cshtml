@@ -20,9 +20,7 @@
         </form>
     </div>
     
-    <div>
-        <h2>@Html.DisplayFor(model => model.Numerology)</h2>
-        <h3>@Html.DisplayFor(model => model.Day)</h3>
+    <div id="main">
         @if (Model.Clout != "")
         {
             <h3>@Html.DisplayFor(model => model.Prefix) @Html.DisplayFor(model => model.Clout)</h3>

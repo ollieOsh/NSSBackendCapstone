@@ -89,28 +89,56 @@ namespace SoundClout.Controllers
 
             if (form.Prefix == "Lil")
             {
-                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt > 1 && n.Weekday == dayBorn && n.PrefixInt == 1);
-
-                form.Clout = second.Word;
-
-                if(second.SyllableCount < 3)
+                try
                 {
-                    var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 1);
-                    
-                    form.Clout = first.Word + " " + second.Word;
+                    var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt > 1 && n.Weekday == dayBorn && n.PrefixInt == 1);
+
+                    form.Clout = second.Word;
+
+                    if (second.SyllableCount < 3)
+                    {
+                        try
+                        {
+                            var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 1);
+
+                            form.Clout = first.Word + " " + second.Word;
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                catch
+                {
+
                 }
             }
             else
             {
-                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == nameMath && n.OrderInt > 1 && n.Weekday == dayBorn && n.PrefixInt == 2);
-
-                form.Clout = second.Word;
-
-                if (second.SyllableCount < 3)
+                try
                 {
-                    var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 2);
+                    var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == nameMath && n.OrderInt > 1 && n.Weekday == dayBorn && n.PrefixInt == 2);
 
-                    form.Clout = first.Word + " " + second.Word;
+                    form.Clout = second.Word;
+
+                    if (second.SyllableCount < 3)
+                    {
+                        try
+                        {
+                            var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 2);
+
+                            form.Clout = first.Word + " " + second.Word;
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                catch
+                {
+
                 }
             }
 

@@ -17,10 +17,6 @@ namespace SoundClout.ViewModels
         [Required]
         public DateTime DOB { get; set; }
 
-        public int Numerology { get; set; }
-
-        public string Day { get; set; }
-
         public string Prefix { get;set; }
 
         public string Clout { get; set; }

@@ -39,6 +39,15 @@ namespace SoundClout.Data //Worked on by Ollie, August 18th, 2017
                         PrefixInt = 1,
                         Weekday = "Saturday"
                     },
+                    new MainName()
+                    {
+                        Word = "",
+                        SyllableCount = 1,
+                        NumerologyInt = 8,
+                        OrderInt = 1,
+                        PrefixInt = 1,
+                        Weekday = "Saturday"
+                    }
                 };
                 foreach (MainName n in Name)
                 {
