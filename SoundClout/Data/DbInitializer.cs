@@ -485,9 +485,207 @@ namespace SoundClout.Data //Worked on by Ollie, August 18th, 2017
                         Word = "Dawg",
                         SyllableCount = 1,
                         OrderInt = 3,
-                        PrefixInt = ,
-                        Weekday = "",
-                        NumerologyInt = 
+                        PrefixInt = 1,
+                        Weekday = "Thursday",
+                        NumerologyInt = 11
+                    },
+                    new MainName()
+                    {
+                        Word = "Hops",
+                        SyllableCount = 1,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Friday",
+                        NumerologyInt = 11
+                    },
+                    new MainName()
+                    {
+                        Word = "Kick",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Saturday",
+                        NumerologyInt = 22
+                    },
+                    new MainName()
+                    {
+                        Word = "Pharoah",
+                        SyllableCount = 4,
+                        OrderInt = 2,
+                        PrefixInt = 1,
+                        Weekday = "Sunday",
+                        NumerologyInt = 33
+                    },
+                    new MainName()
+                    {
+                        Word = "Smell",
+                        SyllableCount = 1,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Monday",
+                        NumerologyInt = 1
+                    },
+                    new MainName()
+                    {
+                        Word = "Garbage",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Tuesday",
+                        NumerologyInt = 2
+                    },
+                    new MainName()
+                    {
+                        Word = "Makeshift",
+                        SyllableCount = 2,
+                        OrderInt = 1,
+                        PrefixInt = 2,
+                        Weekday = "Wednesday",
+                        NumerologyInt = 3
+                    },
+                    new MainName()
+                    {
+                        Word = "Button",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Thursday",
+                        NumerologyInt = 4
+                    },
+                    new MainName()
+                    {
+                        Word = "Muscle",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Friday",
+                        NumerologyInt = 5
+                    },
+                    new MainName()
+                    {
+                        Word = "Spasm",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Saturday",
+                        NumerologyInt = 6
+                    },
+                    new MainName()
+                    {
+                        Word = "Sweet Water",
+                        SyllableCount = 3,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Sunday",
+                        NumerologyInt = 7
+                    },
+                    new MainName()
+                    {
+                        Word = "Flame",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Monday",
+                        NumerologyInt = 8
+                    },
+                    new MainName()
+                    {
+                        Word = "Spaghetti",
+                        SyllableCount = 3,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Tuesday",
+                        NumerologyInt = 9
+                    },
+                    new MainName()
+                    {
+                        Word = "Chest",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Wednesday",
+                        NumerologyInt = 11
+                    },
+                    new MainName()
+                    {
+                        Word = "Splinter",
+                        SyllableCount = 3,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Thursday",
+                        NumerologyInt = 1
+                    },
+                    new MainName()
+                    {
+                        Word = "Pistol",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Friday",
+                        NumerologyInt = 2
+                    },
+                    new MainName()
+                    {
+                        Word = "Spinach",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Saturday",
+                        NumerologyInt = 3
+                    },
+                    new MainName()
+                    {
+                        Word = "Plant",
+                        SyllableCount = 1,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Monday",
+                        NumerologyInt = 4
+                    },
+                    new MainName()
+                    {
+                        Word = "Barbie",
+                        SyllableCount = 2,
+                        OrderInt = 2,
+                        PrefixInt = 1,
+                        Weekday = "Tuesday",
+                        NumerologyInt = 5
+                    },
+                    new MainName()
+                    {
+                        Word = "Oprah",
+                        SyllableCount = 2,
+                        OrderInt = 1,
+                        PrefixInt = 1,
+                        Weekday = "Wednesday",
+                        NumerologyInt = 6
+                    },
+                    new MainName()
+                    {
+                        Word = "Splash",
+                        SyllableCount = 1,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Thursday",
+                        NumerologyInt = 7
+                    },
+                    new MainName()
+                    {
+                        Word = "Mower",
+                        SyllableCount = 2,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Friday",
+                        NumerologyInt = 8
+                    },
+                    new MainName()
+                    {
+                        Word = "Mountain",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Saturday",
+                        NumerologyInt = 9
                     }
                 };
                 foreach (MainName n in Name)

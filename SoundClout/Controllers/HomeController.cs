@@ -157,7 +157,7 @@ namespace SoundClout.Controllers
                         }
                         catch
                         {
-
+                            form.Clout = "Lion Lord";
                         }
                     }
                 }
@@ -173,7 +173,7 @@ namespace SoundClout.Controllers
                         {
                             try
                             {
-                                var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 2);
+                                var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id);
 
                                 form.Clout = first.Word + " " + second.Word;
                             }
@@ -193,7 +193,16 @@ namespace SoundClout.Controllers
                         }
                         catch
                         {
+                            try
+                            {
+                                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == nameMath && n.Weekday == dayBorn);
 
+                                form.Clout = second.Word;
+                            }
+                            catch
+                            {
+                                form.Clout = "Clout";
+                            }
                         }
                     }
                 }
