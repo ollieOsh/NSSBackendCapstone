@@ -686,6 +686,132 @@ namespace SoundClout.Data //Worked on by Ollie, August 18th, 2017
                         PrefixInt = 2,
                         Weekday = "Saturday",
                         NumerologyInt = 9
+                    },
+                    new MainName()
+                    {
+                        Word = "Tackle",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Sunday",
+                        NumerologyInt = 11
+                    },
+                    new MainName()
+                    {
+                        Word = "Blanket",
+                        SyllableCount = 3,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Monday",
+                        NumerologyInt = 1
+                    },
+                    new MainName()
+                    {
+                        Word = "Zucchini",
+                        SyllableCount = 3,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Tuesday",
+                        NumerologyInt = 2
+                    },
+                    new MainName()
+                    {
+                        Word = "Cortisol",
+                        SyllableCount = 3,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Wednesday",
+                        NumerologyInt = 3
+                    },
+                    new MainName()
+                    {
+                        Word = "Charger",
+                        SyllableCount = 2,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Thursday",
+                        NumerologyInt = 4
+                    },
+                    new MainName()
+                    {
+                        Word = "Mountain",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Friday",
+                        NumerologyInt = 5
+                    },
+                    new MainName()
+                    {
+                        Word = "Duck",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Saturday",
+                        NumerologyInt = 6
+                    },
+                    new MainName()
+                    {
+                        Word = "Smurf",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Sunday",
+                        NumerologyInt = 7
+                    },
+                    new MainName()
+                    {
+                        Word = "Wrestler",
+                        SyllableCount = 2,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Monday",
+                        NumerologyInt = 8
+                    },
+                    new MainName()
+                    {
+                        Word = "Tuna",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 1,
+                        Weekday = "Tuesday",
+                        NumerologyInt = 9
+                    },
+                    new MainName()
+                    {
+                        Word = "Contrast",
+                        SyllableCount = 2,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Wednesday",
+                        NumerologyInt = 11
+                    },
+                    new MainName()
+                    {
+                        Word = "Fire",
+                        SyllableCount = 2,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Saturday",
+                        NumerologyInt = 9
+                    },
+                    new MainName()
+                    {
+                        Word = "Triumph",
+                        SyllableCount = 2,
+                        OrderInt = 2,
+                        PrefixInt = 2,
+                        Weekday = "Sunday",
+                        NumerologyInt = 1
+                    },
+                    new MainName()
+                    {
+                        Word = "Flex",
+                        SyllableCount = 1,
+                        OrderInt = 3,
+                        PrefixInt = 2,
+                        Weekday = "Saturday",
+                        NumerologyInt = 7
                     }
                 };
                 foreach (MainName n in Name)
