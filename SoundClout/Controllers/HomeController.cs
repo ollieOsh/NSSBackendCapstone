@@ -12,6 +12,11 @@ namespace SoundClout.Controllers
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly Dictionary<char, int> _alphaNum = new Dictionary<char, int>()
+        {
+            {'a', 1}, {'b', 2}, {'c', 3}, {'d', 4}, {'e', 5}, {'f', 6}, {'g', 7}, {'h', 8}, {'i', 9}, {'j', 10}, {'k', 11}, {'l', 12}, {'m', 13}, {'n', 14}, {'o', 15}, {'p', 16}, {'q', 17}, {'r', 18}, {'s', 19}, {'t', 20}, {'u', 21}, {'v', 22}, {'w', 23}, {'x', 24}, {'y', 25}, {'z', 26}
+
+        };
 
         public HomeController(ApplicationDbContext context)
         {
@@ -71,19 +76,40 @@ namespace SoundClout.Controllers
             int month = Reduce(birthDate.Month);
             int year = Reduce(birthDate.Year);
 
-            form.Numerology =  Reduce(day + month + year);
-            form.Day = form.DOB.DayOfWeek.ToString();
+            int numerology = Reduce(day + month + year);
+
+            int firstFirstAlphaNum = _alphaNum[form.FirstName.ToLower().First()];
+            int firstLastAlphaNum = _alphaNum[form.LastName.ToLower().First()];
+            int lastFirstAlphaNum = _alphaNum[form.FirstName.ToLower().Last()];
+            int lastLastAlphaNum = _alphaNum[form.LastName.ToLower().Last()];
+
+            int nameMath = Reduce((form.FirstName.Length + form.LastName.Length) * (firstFirstAlphaNum + lastFirstAlphaNum + lastLastAlphaNum + firstLastAlphaNum));
+            
+            string dayBorn = form.DOB.DayOfWeek.ToString();
 
             if (form.Prefix == "Lil")
             {
-                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == form.Numerology && n.OrderInt > 1 && n.Weekday == form.Day);
+                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt > 1 && n.Weekday == dayBorn && n.PrefixInt == 1);
 
                 form.Clout = second.Word;
 
                 if(second.SyllableCount < 3)
                 {
-                    var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == form.Numerology && n.OrderInt != 2 && n.Weekday == form.Day && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id);
+                    var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 1);
                     
+                    form.Clout = first.Word + " " + second.Word;
+                }
+            }
+            else
+            {
+                var second = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == nameMath && n.OrderInt > 1 && n.Weekday == dayBorn && n.PrefixInt == 2);
+
+                form.Clout = second.Word;
+
+                if (second.SyllableCount < 3)
+                {
+                    var first = await _context.MainName.FirstOrDefaultAsync(n => n.NumerologyInt == numerology && n.OrderInt != 2 && n.Weekday == dayBorn && n.SyllableCount + second.SyllableCount < 5 && n.Id != second.Id && n.PrefixInt == 2);
+
                     form.Clout = first.Word + " " + second.Word;
                 }
             }
